@@ -149,7 +149,7 @@ namespace ET
                         sbDispose.Clear();
                         sb.Append("\t{\n");
                         
-                        sb.Append($"\t\tpublic static {msgName} Create(bool isFromPool = true) \n\t\t{{ \n\t\t\treturn !isFromPool? new {msgName}() : ObjectPool.Instance.Fetch(typeof({msgName})) as {msgName}; \n\t\t}}\n\n");
+                        sb.Append($"\t\tpublic static {msgName} Create(bool isFromPool = false) \n\t\t{{ \n\t\t\treturn ObjectPool.Instance.Fetch(typeof({msgName}), isFromPool) as {msgName}; \n\t\t}}\n\n");
                         
                         continue;
                     }
@@ -162,7 +162,7 @@ namespace ET
                         if (!newline.Contains("// no dispose"))
                         {
                             sb.Append(
-                                $"\t\tpublic override void Dispose() \n\t\t{{\n\t\t\tif (!this.IsFromPool) return;\n\t\t\t{sbDispose.ToString()}\n\t\t\tObjectPool.Instance.Recycle(this); \n\t\t}}\n\n");
+                                $"\t\tpublic override void Dispose() \n\t\t{{\n\t\t\tif (!this.IsFromPool) {{ return; }}\n\t\t\t{sbDispose.ToString()}\n\t\t\tObjectPool.Instance.Recycle(this); \n\t\t}}\n\n");
                         }
 
                         sb.Append("\t}\n\n");

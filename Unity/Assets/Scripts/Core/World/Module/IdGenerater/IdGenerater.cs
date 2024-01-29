@@ -15,9 +15,9 @@ namespace ET
         {
             ulong result = 0;
             result |= (ushort) this.Process;
-            result <<= 14;
-            result |= this.Time;
             result <<= 30;
+            result |= this.Time;
+            result <<= 20;
             result |= this.Value;
             return (long) result;
         }
@@ -32,7 +32,7 @@ namespace ET
         public IdStruct(long id)
         {
             ulong result = (ulong) id; 
-            this.Value = (ushort) (result & IdGenerater.Mask20bit);
+            this.Value = (uint) (result & IdGenerater.Mask20bit);
             result >>= 20;
             this.Time = (uint) result & IdGenerater.Mask30bit;
             result >>= 30;

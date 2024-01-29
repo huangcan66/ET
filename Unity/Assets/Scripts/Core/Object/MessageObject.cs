@@ -4,7 +4,8 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET
 {
-    public abstract class MessageObject: ProtoObject, IMessage, IDisposable
+    [DisableNew]
+    public abstract class MessageObject: ProtoObject, IMessage, IDisposable, IPool
     {
         public virtual void Dispose()
         {

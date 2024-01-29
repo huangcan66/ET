@@ -2,7 +2,15 @@
 
 # __讨论QQ群 : 474643097__  
 
-# ET8 发布! 仙女！  
+---
+# 公司黑名单：  
+## 成都三猩元宇宙公司，拖欠员工工资，拖欠本人咨询费用  
+---
+
+# ET8.1 发布!  
+8.1跟8区别不大，代码结构完全没有变化，主要是编译方式的修改，可以在Unity中按F6进行编译，也可以在IDE中进行编译，运行中reload可以先按F6编译，再按F7进行热重载   
+
+# ET8 发布! 貂蝉  
 1. 多线程多进程架构,架构更加灵活强大，多线程设计详细内容请看多线程设计课程  
 2. 抽象出纤程(Fiber)的概念，类似erlang的进程，非常轻松的创建多个纤程，利用多核，仍然是单线程开发的体验  
 3. 纤程调度: 主线程，线程池，每个纤程一个线程，3种调度方式  
@@ -51,11 +59,11 @@
 
 # [ET论坛](https://et-framework.cn)  
 
-# [ET商店](https://github.com/egametang/ET/tree/master/Store)  
+# [ET商店](./Store)  
 
-# [ET6.0视频教程上线](https://edu.uwa4d.com/course-intro/1/375)   
+# [ET视频教程](https://community.uwa4d.com/search?keyword=ET&scope=1)   
 
-# [运行指南](https://github.com/egametang/ET/blob/master/Book/1.1%E8%BF%90%E8%A1%8C%E6%8C%87%E5%8D%97.md)  
+# [运行指南](./Book/1.1运行指南.md)  
 
 # [分析器说明](https://www.yuque.com/u28961999/yms0nt/)
 
