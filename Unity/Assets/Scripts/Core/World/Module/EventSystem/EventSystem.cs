@@ -20,7 +20,6 @@ namespace ET
         }
         
         private readonly Dictionary<Type, List<EventInfo>> allEvents = new();
-        
         private readonly Dictionary<Type, Dictionary<long, object>> allInvokers = new(); 
         
         public void Awake()
@@ -50,7 +49,7 @@ namespace ET
                     this.allEvents[eventType].Add(eventInfo);
                 }
             }
-
+            //这里的type是类的类型
             foreach (Type type in codeTypes.GetTypes(typeof (InvokeAttribute)))
             {
                 object obj = Activator.CreateInstance(type);
@@ -59,7 +58,7 @@ namespace ET
                 {
                     throw new Exception($"type not is callback: {type.Name}");
                 }
-                
+                //lr ss nd saman fashi mao/zei
                 object[] attrs = type.GetCustomAttributes(typeof(InvokeAttribute), false);
                 foreach (object attr in attrs)
                 {

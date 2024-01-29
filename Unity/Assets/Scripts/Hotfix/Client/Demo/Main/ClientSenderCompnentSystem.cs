@@ -37,7 +37,9 @@ namespace ET.Client
 
             NetClient2Main_Login response = await self.Root().GetComponent<ProcessInnerSender>().Call(self.netClientActorId, new Main2NetClient_Login()
             {
-                OwnerFiberId = self.Fiber().Id, Account = account, Password = password
+                OwnerFiberId = self.Fiber().Id, 
+                Account = account, 
+                Password = password
             }) as NetClient2Main_Login;
             return response.PlayerId;
         }

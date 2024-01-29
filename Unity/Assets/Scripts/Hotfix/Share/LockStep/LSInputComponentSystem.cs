@@ -17,6 +17,7 @@ namespace ET
         [LSEntitySystem]
         private static void LSUpdate(this LSInputComponent self)
         {
+            //Log.Debug("LSInputComponentSystem.LSUpdate");
             LSUnit unit = self.GetParent<LSUnit>();
 
             TSVector2 v2 = self.LSInput.V * 6 * 50 / 1000;
